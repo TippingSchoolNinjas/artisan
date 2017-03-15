@@ -1,0 +1,34 @@
+extends ../layouts/default
+
+block content
+    .gapp
+    .heading-margin
+        h1.section-heading1= Product.prod_name
+        hr.maintanance
+    
+    section.container
+        .breadcram.img-brand
+            a.bt Home
+            |   &#47;  
+            a.bt= Product.category  &#47; Product.prod_name
+        
+
+
+        .col-sm-5.section-image2
+            image(src=Product.image, width='100%',height='380px')
+
+        .col-sm-7.pad6
+            h3.mar1= Product.prod_name
+            .gap
+
+            .dot
+                | ITEM # 330217
+
+            h4 Product Discription
+
+            p.section-para3 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                |   exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
+                |   fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            
+            input.button2(type='submit', name='submit', value='CONTACT US NOW')
+    .gapp
