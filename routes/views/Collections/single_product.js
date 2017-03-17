@@ -7,7 +7,8 @@ exports = module.exports = function(req, res){
     locals.section = 'Product';
 
 
-    view.query('Product', keystone.list('Product').model.find());
+    // view.query('product', keystone.list('Product').model.findOne({prod_name : req.param.productname}));
+    view.query('Product', keystone.list('Product').model.findById(req.params.productname));
 
     view.render('single-product');
 };

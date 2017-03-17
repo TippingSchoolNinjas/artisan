@@ -115,8 +115,10 @@ params.push('cat_name' , req.params.collectionname);
 		view.render('products_page')
 	});
 
-	app.get('/product/:productname', routes.views.Collections.single_product);
-
+	app.get('/products/:productname', routes.views.Collections.single_product);
+// app.get('/products/:productname', function(req, res){
+// 	res.send("id : ");
+// });
 	
 	
 

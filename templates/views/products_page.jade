@@ -2,8 +2,9 @@ extends ../layouts/default
 
 block intro
     .container.collection-container
-        .section-header
+        .section-center
             h1.section-heading= Product.category
+                hr.underline
         .section-height
             .col-md-3
                 section.base-col
@@ -173,7 +174,7 @@ block intro
                 if products.length
                     each product in products
                         .col-md-4.category-details
-                            a(href=product.link)
+                            a(href='/products/' + product._id)
                                 img.prod-image(src = product.image)
                             h3= product.prod_name
                 else

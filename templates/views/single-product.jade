@@ -2,15 +2,17 @@ extends ../layouts/default
 
 block content
     .gapp
-    .heading-margin
-        h1.section-heading1= Product.prod_name
-        hr.maintanance
+    .section-center
+        h1.section-heading= Product.prod_name
+            hr.underline
     
     section.container
         .breadcram.img-brand
             a.bt Home
             |   &#47;  
-            a.bt= Product.category  &#47; Product.prod_name
+            a(href = "/collections/" + Product.cat_name).bt= Product.category  
+            |   &#47;  
+            span=Product.prod_name
         
 
 
