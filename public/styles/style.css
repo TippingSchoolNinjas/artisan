@@ -1,9 +1,13 @@
 .category-details{
     text-align: center;
+    margin-bottom: 35px;
 }
 .category-details a img{
 width: 250px;
 height: 250px;
+}
+.category-details h3{
+    font-size: 18px;
 }
 
 .section-header{

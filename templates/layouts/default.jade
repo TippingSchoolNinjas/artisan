@@ -39,7 +39,7 @@ html
 		block head
 
 	//- HTML BODY
-	body
+	body(onload="javascript:applySetting()")
 
 		//- HEADER
 		header
@@ -47,7 +47,7 @@ html
 				#cont.container
 					.navbar-header
 						a.pull-left.visible-xs.visible-sm.visible-md.visible-lg(href='/')
-							img.pad5(src='../images/Logo-white.png')
+							img.pad5(src='/images/Logo-white.png')
 						button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#collapsable-nav', aria-expanded='false')
 							span.sr-only Toggle navigation
 							span.icon-bar

@@ -89,7 +89,13 @@ exports = module.exports = function (app) {
   var Obj = {};
   var len = array.length;
   for (var i = 0; i < len; i+=2){
+    if(array[i] == array[i+2]){
+      Arr = [array[i+1], array[i+3]];
+      Obj[array[i]] = Arr;
+      i = i+2;
+    }else {
     Obj[array[i]] = array[i+1]
+  }
   }
   return Obj;
 }
@@ -100,17 +106,68 @@ b = a[1].split('&');
 
 params = [];
 for (var i = 0; i < b.length; i++) {
-        var nv = b[i].split('=');
-        for(var j = 0; j<nv.length; j++){
+        var nv = b[i].split(/[=%]/);
+        if (nv.length > 2){
+        for(var j = 0; j<nv.length; j+=3){
           params.push(nv[j]);
   }
+        } else {
+          for(var j = 0; j<nv.length; j++){
+          params.push(nv[j]);
+  }
+        }
 }
-params.push('cat_name' , req.params.collectionname);
+
  Obj =  ArrToObj(params);  
+
+
+ //////////////
+function ArrtoFilterarr(array){
+  var abc = [];
+  var len = array.length;
+  for (var i = 0; i < len; i++){
+    if(array[i] == array[i+2]){
+      abc.push(array[i]);
+      Arr = [array[i+1], array[i+3]];
+      abc.push(Arr);
+      i = i+3;
+    }else {
+    abc.push(array[i]);
+  }
+}
+return abc;
+}
+
+Arry = ArrtoFilterarr(params);
+for(i = Arry.length; i < 10 ; i++ ){
+		Arry[i] = [null];
+
+}
+for(i = 0; i < 10 ; i++ ){
+  if (typeof(Arry[i]) != 'object' ){
+    Arry[i] = [Arry[i]];
+  }
+}
+Arry.push('cat_name' , req.params.collectionname);
+// if(Arr10)
 
 // res.send(b);
 		var view = new keystone.View(req, res);
-		view.query('products', keystone.list('Product').model.find(Obj));
+		console.log(params);
+		console.log(Arry);
+		var arr1 = Arry[0];var arr2 = Arry[1];var arr3 = Arry[2];
+		var arr4 = Arry[3];var arr5 = Arry[4];var arr6 = Arry[5];
+		var arr7 = Arry[6];var arr8 = Arry[7];var arr9 = Arry[8];
+		var arr10 = Arry[9];var arr11 = Arry[10];var arr12 = Arry[11];
+				console.log('string');
+		view.query('products', keystone.list('Product').model.find({[arr1] : {$in : arr2},[arr3] : {$in : arr4}, [arr5] : {$in : arr6},[arr7] : {$in : arr8},[arr9] : {$in : arr10},[arr11] : {$in : [arr12]}}));		
+		// view.query('products', keystone.list('Product').model.find({[arr1] : {$in : [arr2]},[arr3] : {$in : [arr4]}, [arr5] : {$in : [arr6]},[arr7] : {$in : [arr8]},[arr9] : {$in : [arr10]},[arr11] : {$in : [arr12]}}));		
+		// }
+	// } else {
+	// 	console.log('object');
+	// 	view.query('products', keystone.list('Product').model.find({[arr1] : {$in : arr2}}));
+	// }
+		
 		view.query('Product', keystone.list('Product').model.findOne({'cat_name' : req.params.collectionname}));
 		view.render('products_page')
 	});
