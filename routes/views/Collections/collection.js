@@ -20,7 +20,7 @@ exports = module.exports = function(req, res){
     //     });
     // });
 
-    view.query('categories', keystone.list('Category').model.find());
+    view.query('categories', keystone.list('Category').model.find().sort('Name'));
 
     view.render('collections');
 };
