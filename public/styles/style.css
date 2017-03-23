@@ -40,8 +40,15 @@ margin: 0 0 3em;
     margin-top: 150px;
     margin-bottom: 50px;
 }
-
-
+#filter-btn{
+    color: #c8ad7f;
+    text-align: center;
+    
+}
+#filter-btn:hover{
+    color: #000;
+    
+}
 
 
 
@@ -1213,3 +1220,189 @@ margin-left: 29px;
     margin-top: 5px;
 }
 
+/***********Contact us*************/
+
+#abc {
+width:100%;
+height:100%;
+opacity:.95;
+top:0;
+left:0;
+/*left:50%;
+right:50%;*/
+display:none;
+position:fixed;
+background-color:#313131;
+overflow:auto;
+z-index: 9999;
+}
+/*img#close {
+position:absolute;
+right:-14px;
+top:-14px;
+cursor:pointer
+}*/
+div#popupContact {
+position:absolute;
+left:50%;
+top:17%;
+margin-left:-202px;
+font-family:'Raleway',sans-serif
+}
+#form5 {
+position:relative;
+left:40%;
+max-width:400px;
+min-width:270px;
+padding:10px 50px;
+border:2px solid gray;
+border-radius:10px;
+font-family:raleway;
+background-color:#fff
+}
+.p10 {
+margin-top:30px
+}
+.h10 {
+background-color:#FEFFED;
+padding:20px 35px;
+margin:-10px -50px;
+text-align:center;
+border-radius:10px 10px 0 0
+}
+.hr10 {
+margin:10px -50px;
+border:0;
+border-top:1px solid #ccc
+}
+.input5 {
+width:82%;
+padding:10px;
+margin-top:30px;
+border:1px solid #ccc;
+padding-left:40px;
+font-size:16px;
+font-family:raleway
+}
+#name {
+background-position:5px 7px
+}
+#email {
+background-position:5px 7px
+}
+#prod_name {
+background-position:5px 7px
+}
+.textarea10 {
+
+background-position:5px 7px;
+width:82%;
+height:95px;
+padding:10px;
+resize:none;
+margin-top:30px;
+border:1px solid #ccc;
+padding-left:40px;
+font-size:16px;
+font-family:raleway;
+margin-bottom:30px
+}
+#submit {
+text-decoration:none;
+width:100%;
+text-align:center;
+display:block;
+background-color:#FFBC00;
+color:#fff;
+border:1px solid #FFCB00;
+padding:10px 0;
+font-size:20px;
+cursor:pointer;
+border-radius:5px
+}
+.spa {
+color:red;
+font-weight:700
+}
+button3 {
+width:10%;
+margin:10px;
+padding:10px;
+height:45px;
+border-radius:3px;
+/*border: 1px solid#cd853f;*/
+background-color:#cd853f;
+color:#fff;
+font-family:'Raleway',sans-serif;
+font-size:15px;
+font:black;
+cursor:pointer
+}
+.button3:hover{
+    background-color: #b48537;
+    color: #fff;
+    border: 1px solid #b48537;
+}
+a.button3:hover{
+    background-color:#C8AD7F;
+    text-decoration:none;
+    color:#fff;
+    border-color:#C8AD7F;
+}
+a.button3:visited{
+  color:#000;
+}
+a.button3:active{
+    /*text-decoration:none;*/
+    color:#fff;
+}
+ item_id{
+     text-align:center;
+ }
+#button4 {
+text-decoration:none;
+width:100%;
+text-align:center;
+display:block;
+background-color:#FFBC00;
+color:#fff;
+border:1px solid #FFCB00;
+padding:10px 0;
+font-size:20px;
+cursor:pointer;
+border-radius:5px
+}
+.form-close{
+        float: right;
+    margin-top: -37px;
+    margin-right: -25px;
+    cursor: pointer;
+}
+/****************waste*****/
+
+
+/*//////////////carousel css////////////////*/
+
+.slick-slider{
+    width : 800px;
+}
+#container
+{
+    border:2px solid #ac9b92;
+    margin-bottom: 32px;
+    box-sizing: border-box;
+    width:100%;
+    padding: 0 22.5px;
+    background: #f2f1ef;
+
+
+}
+
+.breadcram-cat{
+    text-transform: capitalize;
+}
+    
+nav.woocommerce{
+   
+    margin-left: 2px;
+}

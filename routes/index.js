@@ -81,6 +81,18 @@ exports = module.exports = function (app) {
 
 	app.get('/collections/:collectionname', routes.views.Collections.products)
 
+
+	app.get('/search', function(req, res){
+		var view = new keystone.View(req, res);
+		 	view.query('products', keystone.list('Product').model.find(
+		  {$text: {$search : req.query.keywords } },
+            {score : {$meta: "textScore"} }).sort({score : {$meta : 'textScore'} }). limit(20)
+			
+        
+       
+		);
+		view.render('search');
+});
 	// app.get('/collections/ashford',  routes.views.Collections.products);
 
 	app.get('/collections/:collectionname/filter', function(req, res){
@@ -169,6 +181,8 @@ Arry.push('cat_name' , req.params.collectionname);
 	// }
 		
 		view.query('Product', keystone.list('Product').model.findOne({'cat_name' : req.params.collectionname}));
+		view.query('Roomshot', keystone.list('Roomshot').model.findOne({'cat_name' : req.params.collectionname}));
+    view.query('Roomshots', keystone.list('Roomshot').model.find({'cat_name' : req.params.collectionname}));
 		view.render('products_page')
 	});
 

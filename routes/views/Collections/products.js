@@ -27,6 +27,8 @@ exports = module.exports = function(req, res){
 
     view.query('products', keystone.list('Product').model.find({cat_name : req.params.collectionname}).sort('prod_name'));
     view.query('Product', keystone.list('Product').model.findOne({'cat_name' : req.params.collectionname}));
+    view.query('Roomshot', keystone.list('Roomshot').model.findOne({'cat_name' : req.params.collectionname}));
+    view.query('Roomshots', keystone.list('Roomshot').model.find({'cat_name' : req.params.collectionname}));
         
 
     view.render('products_page');

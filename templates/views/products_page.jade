@@ -7,7 +7,17 @@ block intro
                 hr.underline
         .section-height
             .col-md-3
+                a#filter-btn(style = "display : none;" href = "/collections/" + Product.cat_name)
+                    i.fa.fa-refresh.fa-2x
                 section.base-col
+                    form.form-inline(role="search", action="/search", method="GET")
+                        fieldset.pad.pad5
+                            
+                            input.form-part2(type="text", id="keywords", name="keywords", placeholder="search") 
+                            button.ico(type='submit') 
+                                <i class="fa fa-search fa-spacing" aria-hidden='true'></i>    
+                        //- fieldset.pad.pad5
+                            
                     h3.filter-heading base colour
                     ul.filter-list
                         li
@@ -89,49 +99,49 @@ block intro
                         li
                             input(type = 'checkbox' name = 'pattern' value = 'GREY')#cb25
                             label(for = 'cb25') grey
-                        li.cb1
+                        li.cb2
                             input(type = 'checkbox' name = 'pattern' value = 'BLACK')#cb26
                             label(for = 'cb26') BLACK
-                        li.cb1
+                        li.cb2
                             input(type = 'checkbox' name = 'pattern' value = 'WHITE')#cb27
                             label(for = 'cb27') white
-                        li.cb1
+                        li.cb2
                             input(type = 'checkbox' name = 'pattern' value = 'SILVER')#cb28
                             label(for = 'cb28') silver
-                        li.cb1
+                        li.cb2
                             input(type = 'checkbox' name = 'pattern' value = 'BEIGE')#cb29
                             label(for = 'cb29') beige
-                        li.cb1
+                        li.cb2
                             input(type = 'checkbox' name = 'pattern' value = 'ORANGE')#cb30
                             label(for = 'cb30') orange
-                        li.cb1
+                        li.cb2
                             input(type = 'checkbox' name = 'pattern' value = 'PINK')#cb31
                             label(for = 'cb31') pink
-                        li.cb1
+                        li.cb2
                             input(type = 'checkbox' name = 'pattern' value = 'BROWN')#cb32
                             label(for = 'cb32') brown
-                        li.cb1
+                        li.cb2
                             input(type = 'checkbox' name = 'pattern' value = 'GOLD')#cb33
                             label(for = 'cb33') gold
-                        li.cb1
+                        li.cb2
                             input(type = 'checkbox' name = 'pattern' value = 'PURPLE')#cb34
                             label(for = 'cb34') purple
-                        li.cb1
+                        li.cb2
                             input(type = 'checkbox' name = 'pattern' value = 'MUSTARD')#cb35
                             label(for = 'cb35') mustard
-                        li.cb1
+                        li.cb2
                             input(type = 'checkbox' name = 'pattern' value = 'COPPER')#cb36
                             label(for = 'cb36') copper
-                        li.cb1
+                        li.cb2
                             input(type = 'checkbox' name = 'pattern' value = 'TEAL')#cb37
                             label(for = 'cb37') teal
-                        li.cb1
+                        li.cb2
                             input(type = 'checkbox' name = 'pattern' value = 'MAROON')#cb38
                             label(for = 'cb38') maroon
-                        li.cb1
+                        li.cb2
                             input(type = 'checkbox' name = 'pattern' value = 'VIOLET')#cb39
                             label(for = 'cb39') violet
-                        li.cb1
+                        li.cb2
                             input(type = 'checkbox' name = 'pattern' value = 'INDIGO')#cb40
                             label(for = 'cb40') indigo
                         button#button-filter2.btn.btn-default(type = 'button') Show More
@@ -337,13 +347,49 @@ block intro
                     h3.filter-heading availability
                     ul.filter-list
                         li
-                            input(type = 'checkbox' name = 'style' value = 'INSTOCK')#cb91
-                            label(for = 'cb91') IN-STOCK
+                            input(type = 'checkbox' name = 'style' value = 'INSTOCK')#cb103
+                            label(for = 'cb103') IN-STOCK
                         li
-                            input(type = 'checkbox' name = 'style' value = 'NONSTOCK')#cb92
-                            label(for = 'cb92') NON-STOCK
+                            input(type = 'checkbox' name = 'style' value = 'NONSTOCK')#cb104
+                            label(for = 'cb104') NON-STOCK
                 button#button.btn.btn-default(type = 'button') Filter
             .col-md-9
+                #content(role='main')
+                    nav.woocommerce-breadcrumb
+                        a(href='/') Home &#47; 
+                        span.breadcram-cat= Product.category
+                br
+                
+
+
+                #container.container-fliud
+                    
+
+                    
+                    
+                        
+                            
+                    
+                            
+                        .slider.san_slider
+                            p
+                            p= Roomshot.rs_text
+                                a(href=Roomshot.rs_video) VIEW VIDEO
+                            p
+
+                                    
+                                
+                                       
+                                       
+                
+                        .section-header
+                            
+                                .regular
+                                    each roomshot in Roomshots
+                                        div
+                                            img(src="/images/roomshots/" + roomshot.images + ".jpg",width = '247px', height='330px')
+                                        
+                
                 if products.length
                     each product in products
                         .col-md-4.category-details
